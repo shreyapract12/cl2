@@ -1,0 +1,27 @@
+import requests
+
+key = 'P9GGR5VPMUI9UOVV'  # Follow the steps below to get your key
+t = 22
+
+while True:
+    t += 1
+    print("temperature", t)
+    params = {'field1': t, 'key': key}
+    response = requests.post("https://api.thingspeak.com/update", data=params)
+    print(response)
+
+
+
+
+
+import requests
+
+key='P9GGR5VPMUI9UOVV'
+t=22
+
+while True:
+    t += 1;
+    print("Temperature :", t)
+    params = {'field1': t,'key': key}
+    response = requests.post("https://api.thingspeak.com/update", data=params)
+    print(response)

@@ -1,0 +1,31 @@
+const int led = 3;
+const int sensor = 4;
+const int buzz = 5;
+int val = HIGH;
+void setup()
+{
+  pinMode(led,OUTPUT);
+  pinMode(sensor,INPUT);
+  pinMode(buzz,OUTPUT);
+  Serial.begin(9600);
+  
+}
+
+void loop()
+{
+  val = digitalRead(sensor);
+
+  if(val == LOW)
+  {
+    digitalWrite(led,HIGH);
+    digitalWrite(buzz,HIGH);
+    Serial.println("Object detected");
+    delay(100);
+  }
+
+  else{
+    digitalWrite(led,LOW);
+    digitalWrite(buzz,LOW);
+  }
+  delay(100);
+}
